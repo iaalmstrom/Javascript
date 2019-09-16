@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+	
+/* Style the body */
+body {
+	display: flex;
+  font-family: Arial;
+  margin: 0;
+	min-height: 100vh;  /* sticky footer*/
+	flex-direction: column;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* Main column */
+.main {
+	background-color: white;
+	background: transparent;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #ddd;
+	margin-top: auto;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+}
+</style>
+	
+	
+	
+	
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>My Website</h1>
+  <p>With a <b>flexible</b> layout.</p>
+</div>
+
+
+<!-- The flexible grid (content) -->
+<div class="row">
+  
+  <div class="main">
+    <h2>My form</h2>
+		
+		<form name="myform" action="javascript:showMsg()">
+		 
+					<input type="text" id="fname" name="firstname" placeholder="Your first name..">
+			
+			    <input type="submit" value="OK">
+
+		</form>
+		
+		
+		<p id="result"></p>
+		
+
+		
+		
+		
+  </div>
+	
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <h2>Sticky Footer</h2>
+</div>
+	
+	
+	
+	
+<script>
+  function showMsg() {
+		var fname = document.getElementById("fname").value;
+		if (fname == "") {
+			alert("Please enter your first name");
+		} else {
+			document.getElementById("result").innerHTML = "Hi " + fname + "!";
+			document.querySelector("body").style.backgroundColor = "red";
+		}
+		
+  }
+</script>
+	
+
+</body>
+</html>
