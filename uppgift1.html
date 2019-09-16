@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+/* Style the body */
+body {
+	display: flex;
+  font-family: Arial;
+  margin: 0;
+	flex-direction: column;
+	min-height: 100vh;    /* 100% av höjden för viewport 
+	                         gör så att det blir en sk sticky footer*/
+}
+
+/* Header/logo Title */
+.header {
+  padding: 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Main column */
+.main {
+	background-color: white;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  text-align: center;
+  background: #dddddd;
+	margin-top: auto;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other. Only works when more than one div added */
+@media screen and (max-width: 700px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+}
+</style>
+	
+	
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>My Website</h1>
+  <p>With  <b>flexible</b> layout.</p>
+</div>
+
+
+<!-- The flexible grid (content) -->
+<div class="row">
+  
+  <div class="main">
+    <h2>My form</h2>
+    <button onclick="showMsg('Hej det här är min text!')";>Button</button>
+  </div>
+	
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <h2>Sticky Footer at the bottom</h2>
+</div>
+
+	
+<script>
+	/* show the message string msg in a popup alert dialog */
+  function showMsg(msg) {
+    alert(msg);
+  }
+</script>
+
+</body>
+</html>
